@@ -11,6 +11,17 @@ import SWRevealViewController
 
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet weak var panelView: UIView!
+    
+    // 定位按钮触发方法
+    @IBAction func locationBtnTap(_ sender: UIButton) {
+        
+        
+    }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

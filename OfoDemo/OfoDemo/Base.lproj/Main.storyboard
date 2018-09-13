@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,13 +25,88 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="chg-ga-b3B">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="05v-2R-SiB" userLabel="Panel View">
+                                <rect key="frame" x="0.0" y="500" width="375" height="167"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteImage" translatesAutoresizingMaskIntoConstraints="NO" id="iGo-dq-ck6">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="szX-mx-Ycj">
+                                        <rect key="frame" x="46.5" y="33.5" width="282" height="100"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xp4-1d-afZ">
+                                                <rect key="frame" x="0.0" y="10" width="61" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVI-4i-mi1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="61" height="60"/>
+                                                        <state key="normal" backgroundImage="leftBottomImage"/>
+                                                        <connections>
+                                                            <action selector="locationBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YcM-Pe-Ozd"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="定位" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHw-6s-plv">
+                                                        <rect key="frame" x="13" y="70" width="35" height="10"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="ZVI-4i-mi1" secondAttribute="trailing" id="0F9-xS-ieK"/>
+                                                    <constraint firstItem="dHw-6s-plv" firstAttribute="leading" secondItem="xp4-1d-afZ" secondAttribute="leading" constant="13" id="cuP-KI-L7H"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ZVI-4i-mi1" secondAttribute="bottom" constant="20" symbolic="YES" id="nGC-Jo-fWk"/>
+                                                </constraints>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTP-ME-hBa">
+                                                <rect key="frame" x="91" y="0.0" width="100" height="100"/>
+                                                <state key="normal" title="立即用车" backgroundImage="userBikeImage">
+                                                    <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7a2-0u-KBr">
+                                                <rect key="frame" x="221" y="10" width="61" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ax4-qT-ndN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="61" height="60"/>
+                                                        <state key="normal" backgroundImage="rightBottomImage"/>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="吐槽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsR-o0-zHr">
+                                                        <rect key="frame" x="13" y="70" width="35" height="10"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="CsR-o0-zHr" firstAttribute="leading" secondItem="7a2-0u-KBr" secondAttribute="leading" constant="13" id="ELe-zZ-0cK"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ax4-qT-ndN" secondAttribute="trailing" id="tuZ-DT-358"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ax4-qT-ndN" secondAttribute="bottom" constant="20" symbolic="YES" id="ygw-MN-m3A"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="iGo-dq-ck6" secondAttribute="trailing" id="5FE-on-Rda"/>
+                                    <constraint firstItem="szX-mx-Ycj" firstAttribute="centerX" secondItem="05v-2R-SiB" secondAttribute="centerX" id="Lft-6J-CgO"/>
+                                    <constraint firstAttribute="bottom" secondItem="iGo-dq-ck6" secondAttribute="bottom" id="YKk-gt-sIR"/>
+                                    <constraint firstItem="szX-mx-Ycj" firstAttribute="centerY" secondItem="05v-2R-SiB" secondAttribute="centerY" id="ZZN-Pd-kbG"/>
+                                    <constraint firstItem="iGo-dq-ck6" firstAttribute="top" secondItem="05v-2R-SiB" secondAttribute="top" id="hn3-LZ-tYG"/>
+                                    <constraint firstItem="iGo-dq-ck6" firstAttribute="leading" secondItem="05v-2R-SiB" secondAttribute="leading" id="yCS-FH-eb8"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="chg-ga-b3B" secondAttribute="trailing" id="9Sx-7f-38d"/>
+                            <constraint firstAttribute="trailing" secondItem="05v-2R-SiB" secondAttribute="trailing" id="FDB-sj-h8U"/>
+                            <constraint firstItem="05v-2R-SiB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ji4-J1-RCh"/>
+                            <constraint firstItem="05v-2R-SiB" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="Oqe-gC-wFI"/>
                             <constraint firstItem="vrg-Y8-QCI" firstAttribute="top" secondItem="chg-ga-b3B" secondAttribute="bottom" id="Q4G-b6-sar"/>
                             <constraint firstItem="chg-ga-b3B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ckf-8J-HLo"/>
                             <constraint firstItem="chg-ga-b3B" firstAttribute="top" secondItem="mn2-hK-BuP" secondAttribute="bottom" id="hfF-Em-EcQ"/>
+                            <constraint firstItem="vrg-Y8-QCI" firstAttribute="top" secondItem="05v-2R-SiB" secondAttribute="bottom" id="s9P-yO-4DI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OS1-fh-DoW">
@@ -41,10 +117,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="panelView" destination="05v-2R-SiB" id="SsX-ei-RAN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="948" y="767"/>
+            <point key="canvasLocation" x="948" y="766.86656671664173"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="YtZ-hd-Mj8">
@@ -62,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KKG-4K-5fy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1594" y="761"/>
+            <point key="canvasLocation" x="1748" y="747"/>
         </scene>
         <!--Menu Controller-->
         <scene sceneID="8xx-t0-r8y">
@@ -445,5 +524,9 @@
         <image name="HomePage_UserGuide" width="20" height="20"/>
         <image name="RedPacketBike" width="340" height="135"/>
         <image name="UserInfo_defaultIcon" width="120" height="120"/>
+        <image name="leftBottomImage" width="60" height="60"/>
+        <image name="rightBottomImage" width="60" height="60"/>
+        <image name="userBikeImage" width="100" height="100"/>
+        <image name="whiteImage" width="375" height="263"/>
     </resources>
 </document>
